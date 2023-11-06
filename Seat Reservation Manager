@@ -1,0 +1,16 @@
+class SeatManager {
+	TreeMap<Integer,Boolean> map;
+    public SeatManager(int n) {
+        map = new TreeMap<>();
+        for(int i = 1;i<=n;i++)
+            map.put(i,true);
+    }
+
+    public int reserve() {
+        return map.pollFirstEntry().getKey();
+    }
+
+    public void unreserve(int seatNumber) {
+        map.put(seatNumber,true);
+}
+}
